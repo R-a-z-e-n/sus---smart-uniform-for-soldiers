@@ -1,0 +1,7 @@
+{
+  "name": "SUS - Smart Uniform for Soldiers",
+  "description": "A tactical dashboard for the Indian Army and NCC cadets to monitor soldier health, environmental hazards, and operational status using real-time sensor data and Gemini AI analysis.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

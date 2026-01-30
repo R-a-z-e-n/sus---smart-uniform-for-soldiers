@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUS - Smart Uniform Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #020617;
+      color: #f8fafc;
+      margin: 0;
+      overflow: hidden;
+    }
+    .font-mono {
+      font-family: 'JetBrains+Mono', monospace;
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #475569;
+    }
+    
+    /* Full Screen Boot Animations */
+    @keyframes logo-initial-spin {
+      0% { transform: scale(0.5) rotate(-1080deg); opacity: 0; filter: blur(20px); }
+      50% { transform: scale(1.2) rotate(20deg); opacity: 1; filter: blur(0px); }
+      70% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 20px #84cc16); }
+      80% { transform: scale(1) translateX(-4px); filter: drop-shadow(4px 0 0 #ef4444) drop-shadow(-4px 0 0 #3b82f6); }
+      90% { transform: scale(1) translateX(4px); }
+      100% { transform: scale(1); filter: drop-shadow(0 0 10px #84cc16); }
+    }
+
+    @keyframes text-flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+      70% { opacity: 0.8; }
+    }
+
+    @keyframes scanline {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(100%); }
+    }
+
+    .boot-grid {
+      background-image: linear-gradient(rgba(132, 204, 22, 0.05) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(132, 204, 22, 0.05) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+
+    .animate-logo-boot-full {
+      animation: logo-initial-spin 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .animate-text-glitch {
+      animation: text-flicker 0.1s infinite;
+    }
+
+    @keyframes breathing {
+      0%, 100% { transform: scale(1); filter: brightness(1) drop-shadow(0 0 5px rgba(132, 204, 22, 0.2)); }
+      50% { transform: scale(1.05); filter: brightness(1.2) drop-shadow(0 0 15px rgba(132, 204, 22, 0.5)); }
+    }
+
+    .animate-breathing {
+      animation: breathing 3s ease-in-out infinite;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
